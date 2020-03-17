@@ -1,0 +1,4 @@
+public enum Servicetype
+{
+    placeholder
+}

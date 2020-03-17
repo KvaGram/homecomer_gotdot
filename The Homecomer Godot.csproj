@@ -54,7 +54,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="spaceship\Homecomer.cs" />
+    <Compile Include="spaceship\JobAssignment.cs" />
+    <Compile Include="spaceship\Jobtype.cs" />
+    <Compile Include="spaceship\ModuleFeature.cs" />
+    <Compile Include="spaceship\ModuleJob.cs" />
+    <Compile Include="spaceship\ModuleServices.cs" />
+    <Compile Include="spaceship\ModuleType.cs" />
+    <Compile Include="spaceship\ServiceAssignment.cs" />
+    <Compile Include="spaceship\Servicetype.cs" />
+    <Compile Include="spaceship\ShipLocation.cs" />
     <Compile Include="spaceship\ShipModule.cs" />
+
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
