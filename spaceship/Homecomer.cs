@@ -161,6 +161,11 @@ public class Homecomer : Godot.Node
         foreach (ShipModule m in instance.shipModules)
             m.removeFromServices(crewID, type);
     }
+    internal static ShipModule getModule(int sectionLocation, int moduleLocation)
+    {
+        int index = sectionLocation * MODULES_PER_SECTION + moduleLocation;
+        return instance.shipModules[index];
+    }
 
     /*
     GetAllJobs(crewID) //gets all job assignments this crewman has

@@ -1,0 +1,297 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/ModuleLocationButton.tscn" type="PackedScene" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_right = 325.0
+margin_bottom = 258.0
+grow_horizontal = 0
+columns = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Module" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 61.0
+margin_bottom = 39.0
+
+[node name="Module2" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 65.0
+margin_right = 126.0
+margin_bottom = 39.0
+sectionLocation = 1
+
+[node name="Module3" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 130.0
+margin_right = 191.0
+margin_bottom = 39.0
+sectionLocation = 2
+
+[node name="Module4" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 195.0
+margin_right = 256.0
+margin_bottom = 39.0
+sectionLocation = 3
+
+[node name="Module5" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 260.0
+margin_right = 321.0
+margin_bottom = 39.0
+sectionLocation = 4
+
+[node name="Module10" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 43.0
+margin_right = 61.0
+margin_bottom = 82.0
+moduleLocation = 1
+
+[node name="Module9" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 65.0
+margin_top = 43.0
+margin_right = 126.0
+margin_bottom = 82.0
+sectionLocation = 1
+moduleLocation = 1
+
+[node name="Module8" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 130.0
+margin_top = 43.0
+margin_right = 191.0
+margin_bottom = 82.0
+sectionLocation = 2
+moduleLocation = 1
+
+[node name="Module7" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 195.0
+margin_top = 43.0
+margin_right = 256.0
+margin_bottom = 82.0
+sectionLocation = 3
+moduleLocation = 1
+
+[node name="Module6" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 260.0
+margin_top = 43.0
+margin_right = 321.0
+margin_bottom = 82.0
+sectionLocation = 4
+moduleLocation = 1
+
+[node name="Module15" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 86.0
+margin_right = 61.0
+margin_bottom = 125.0
+moduleLocation = 2
+
+[node name="Module14" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 65.0
+margin_top = 86.0
+margin_right = 126.0
+margin_bottom = 125.0
+sectionLocation = 1
+moduleLocation = 2
+
+[node name="Module13" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 130.0
+margin_top = 86.0
+margin_right = 191.0
+margin_bottom = 125.0
+sectionLocation = 2
+moduleLocation = 2
+
+[node name="Module12" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 195.0
+margin_top = 86.0
+margin_right = 256.0
+margin_bottom = 125.0
+sectionLocation = 3
+moduleLocation = 2
+
+[node name="Module11" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 260.0
+margin_top = 86.0
+margin_right = 321.0
+margin_bottom = 125.0
+sectionLocation = 4
+moduleLocation = 2
+
+[node name="Module20" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 129.0
+margin_right = 61.0
+margin_bottom = 168.0
+moduleLocation = 3
+
+[node name="Module19" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 65.0
+margin_top = 129.0
+margin_right = 126.0
+margin_bottom = 168.0
+sectionLocation = 1
+moduleLocation = 3
+
+[node name="Module18" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 130.0
+margin_top = 129.0
+margin_right = 191.0
+margin_bottom = 168.0
+sectionLocation = 2
+moduleLocation = 3
+
+[node name="Module17" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 195.0
+margin_top = 129.0
+margin_right = 256.0
+margin_bottom = 168.0
+sectionLocation = 3
+moduleLocation = 3
+
+[node name="Module16" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 260.0
+margin_top = 129.0
+margin_right = 321.0
+margin_bottom = 168.0
+sectionLocation = 4
+moduleLocation = 3
+
+[node name="Module25" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 172.0
+margin_right = 61.0
+margin_bottom = 211.0
+moduleLocation = 4
+
+[node name="Module24" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 65.0
+margin_top = 172.0
+margin_right = 126.0
+margin_bottom = 211.0
+sectionLocation = 1
+moduleLocation = 4
+
+[node name="Module23" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 130.0
+margin_top = 172.0
+margin_right = 191.0
+margin_bottom = 211.0
+sectionLocation = 2
+moduleLocation = 4
+
+[node name="Module22" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 195.0
+margin_top = 172.0
+margin_right = 256.0
+margin_bottom = 211.0
+sectionLocation = 3
+moduleLocation = 4
+
+[node name="Module21" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 260.0
+margin_top = 172.0
+margin_right = 321.0
+margin_bottom = 211.0
+sectionLocation = 4
+moduleLocation = 4
+
+[node name="Module30" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 215.0
+margin_right = 61.0
+margin_bottom = 254.0
+moduleLocation = 5
+
+[node name="Module29" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 65.0
+margin_top = 215.0
+margin_right = 126.0
+margin_bottom = 254.0
+sectionLocation = 1
+moduleLocation = 5
+
+[node name="Module28" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 130.0
+margin_top = 215.0
+margin_right = 191.0
+margin_bottom = 254.0
+sectionLocation = 2
+moduleLocation = 5
+
+[node name="Module27" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 195.0
+margin_top = 215.0
+margin_right = 256.0
+margin_bottom = 254.0
+sectionLocation = 3
+moduleLocation = 5
+
+[node name="Module26" parent="GridContainer" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 260.0
+margin_top = 215.0
+margin_right = 321.0
+margin_bottom = 254.0
+sectionLocation = 4
+moduleLocation = 5

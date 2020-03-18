@@ -67,7 +67,7 @@
     <Compile Include="spaceship\Servicetype.cs" />
     <Compile Include="spaceship\ShipLocation.cs" />
     <Compile Include="spaceship\ShipModule.cs" />
-
+    <Compile Include="UI\ModuleLocationButton.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/ModuleLocationButton.cs" type="Script" id=1]
+[ext_resource path="res://UI/module_types/Library.png" type="Texture" id=2]
+
+[node name="Module" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -964.0
+margin_bottom = -560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_right = 60.0
+margin_bottom = 40.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ModuleSprite" type="Sprite" parent="Button"]
+z_index = 1
+texture = ExtResource( 2 )
+centered = false

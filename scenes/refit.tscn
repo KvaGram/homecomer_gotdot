@@ -1,3 +1,43 @@
 [gd_scene format=2]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+margin_top = 128.0
+margin_right = 1019.0
+margin_bottom = 522.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -202.055
+margin_top = -131.702
+margin_right = -162.055
+margin_bottom = -91.702
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 87.0
+margin_top = 61.0
+margin_right = 978.0
+margin_bottom = 449.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
+margin_right = 891.0
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer"]
+margin_top = 4.0
+margin_right = 891.0
+margin_bottom = 4.0
+
+[node name="GridContainer2" type="GridContainer" parent="VBoxContainer"]
+margin_top = 8.0
+margin_right = 891.0
+margin_bottom = 8.0
