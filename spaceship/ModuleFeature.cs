@@ -13,3 +13,4 @@ abstract public class ModuleFeature
 
     public ShipModule Parent => parent;
 }
+

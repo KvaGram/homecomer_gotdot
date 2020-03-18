@@ -13,8 +13,14 @@ public class Homecomer : Godot.Node
 
     public const int FULL_SHIP_SIZE = MODULES_PER_SECTION * NUMBER_OF_SECTIONS;
 
+    //List of modules on the ship
     public ShipModule[] shipModules;
-    
+    //List of crewmen onboard the ship
+    //NOTE: Should be sorted first by CrewAge then by ID.
+    public List<Crewman> shipCrew;
+
+    private int gameMonth;
+
 
     public Node cScene {get; set;}
 
@@ -22,10 +28,12 @@ public class Homecomer : Godot.Node
     {
         Viewport root = GetTree().Root;
         cScene = root.GetChild(root.GetChildCount() - 1);
-        GD.Print("Hello Homecomer!"); //printout to confirm node is active.
+        GD.Print("Hello Homecomer!!!"); //printout to confirm node is active.
 
         //set c# singleton instance access (more direct than Godot singleton system)
         instance = this;
+
+        gameMonth = 0;
 
         shipModules = new ShipModule[FULL_SHIP_SIZE];
         for(int i = 0; i < FULL_SHIP_SIZE; i++)
@@ -34,6 +42,55 @@ public class Homecomer : Godot.Node
             ShipLocation loc = new ShipLocation(i, i / MODULES_PER_SECTION);
             shipModules[i] = new ShipModule(loc, ModuleType.empty);
         }
+
+        shipCrew = new List<Crewman>();
+
+        Random r = new Random(0);
+
+        //Adding initial crew. Note birthdate is in months before game start. A birthdate of -360 equals means age 30 years at game turn 0.
+        shipCrew.Add(new Crewman("Hugh Frost", CrewGender.male, -381, CrewAge.adult)
+        .generateSkills(r, 60, 20, 10, 50, new CrewSkill[]{CrewSkill.socialization, CrewSkill.navigation})
+        );
+        
+        shipCrew.Add(new Crewman("Zach Frost", CrewGender.male, -360, CrewAge.adult)
+        .generateSkills(r, 50, 20, 10, 50, new CrewSkill[]{CrewSkill.artifice, CrewSkill.doctoring})
+        );
+
+        shipCrew.Add(new Crewman("Cole Rowe", CrewGender.male, -570, CrewAge.adult)
+        .generateSkills(r, 60, 20, 10, 30, new CrewSkill[]{CrewSkill.combat, CrewSkill.weaponry})
+        );
+
+        shipCrew.Add(new Crewman("George Hawkins", CrewGender.male, -312, CrewAge.adult)
+        .generateSkills(r, 60, 20, 10, 50, new CrewSkill[]{CrewSkill.socialization, CrewSkill.doctoring})
+        );
+
+        shipCrew.Add(new Crewman("Eden Day", CrewGender.female, -408, CrewAge.adult)
+        .generateSkills(r, 60, 20, 10, 50, new CrewSkill[]{CrewSkill.artifice})
+        );
+
+        shipCrew.Add(new Crewman("Rosie Connor", CrewGender.male, -308, CrewAge.adult)
+        .generateSkills(r, 60, 20, 10, 50, new CrewSkill[]{CrewSkill.navigation})
+        );
+
+        shipCrew.Add(new Crewman("Jessie Marshall", CrewGender.female, -400, CrewAge.adult)
+        .generateSkills(r, 60, 20, 10, 30, new CrewSkill[]{CrewSkill.navigation})
+        );
+
+        shipCrew.Add(new Crewman("Ciara Palmer", CrewGender.female, -302, CrewAge.adult)
+        .generateSkills(r, 60, 20, 10, 50, new CrewSkill[]{CrewSkill.artifice})
+        );
+
+        shipCrew.Add(new Crewman("Alicia Hatcher", CrewGender.female, -320, CrewAge.adult)
+        .generateSkills(r, 60, 20, 10, 50, new CrewSkill[]{CrewSkill.weaponry})
+        );
+        
+        shipCrew.Add(new Crewman("Norma López", CrewGender.female, -432, CrewAge.adult)
+        .generateSkills(r, 60, 20, 10, 50, new CrewSkill[]{CrewSkill.socialization, CrewSkill.combat})
+        );
+
+        int[] foo = {1<<0, 1<<1, 1<<2, 1<<3, 1<<4, 1<<5};
+        foreach(int f in foo)
+            GD.Print(f);
 
     }
 
@@ -76,6 +133,7 @@ public class Homecomer : Godot.Node
 //  }
 
     public static Homecomer Instance { get => instance;}
+    public static int GameMonth { get => Instance.gameMonth;}
 
     public static List<ModuleJob> getAllJobs(int crewID, Jobtype? type)
     {
