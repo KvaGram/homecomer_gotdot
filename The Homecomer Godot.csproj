@@ -54,6 +54,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="scenes\ModulePanel.cs" />
+    <Compile Include="scenes\ModuleRefit.cs" />
     <Compile Include="scenes\TitleScreen.cs" />
     <Compile Include="spaceship\Crewman.cs" />
     <Compile Include="spaceship\CrewTrait.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="spaceship\ShipModule.cs" />
     <Compile Include="UI\ModuleLocationButton.cs" />
     <Compile Include="UI\ModuleMap.cs" />
+    <Content Include="scenes\ModulePanel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,126 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/ModulePanel.cs" type="Script" id=1]
+[ext_resource path="res://UI/ModuleMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI/ModuleLocationButton.tscn" type="PackedScene" id=3]
+
+[node name="ModulePanel" type="Control"]
+anchor_right = 0.089
+anchor_bottom = 0.14
+margin_right = -113.92
+margin_bottom = -100.8
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowDialog" type="WindowDialog" parent="."]
+margin_left = 173.153
+margin_top = 102.167
+margin_right = 221.153
+margin_bottom = 142.167
+
+[node name="GridContainer" parent="WindowDialog" instance=ExtResource( 2 )]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button group" type="VBoxContainer" parent="VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 92.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/button group"]
+margin_right = 40.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="VBoxContainer/button group"]
+margin_top = 24.0
+margin_right = 40.0
+margin_bottom = 44.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="VBoxContainer/button group"]
+margin_top = 48.0
+margin_right = 40.0
+margin_bottom = 68.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button4" type="Button" parent="VBoxContainer/button group"]
+margin_top = 72.0
+margin_right = 40.0
+margin_bottom = 92.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Module navigation" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 96.0
+margin_right = 40.0
+margin_bottom = 210.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/Module navigation"]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "(9, 9)"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Module navigation"]
+margin_top = 18.0
+margin_right = 40.0
+margin_bottom = 114.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/Module navigation/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Module navigation/VBoxContainer"]
+margin_top = 24.0
+margin_right = 40.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/Module navigation/VBoxContainer/VBoxContainer"]
+margin_right = 40.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Module" parent="VBoxContainer/Module navigation/VBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 40.0
+margin_bottom = 24.0
+
+[node name="Button2" type="Button" parent="VBoxContainer/Module navigation/VBoxContainer/VBoxContainer"]
+margin_top = 28.0
+margin_right = 40.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="VBoxContainer/Module navigation/VBoxContainer"]
+margin_top = 76.0
+margin_right = 40.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
