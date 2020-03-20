@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://UI/fonts/titlefont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UI/background/background.0003.png" type="Texture" id=2]
+[ext_resource path="res://UI/background/background.0001.png" type="Texture" id=3]
+[ext_resource path="res://UI/background/background.0000.png" type="Texture" id=4]
+[ext_resource path="res://UI/background/background.0004.png" type="Texture" id=5]
+[ext_resource path="res://UI/background/background.0002.png" type="Texture" id=6]
+[ext_resource path="res://UI/fonts/fancyButtonFont.tres" type="DynamicFont" id=7]
+[ext_resource path="res://UI/fonts/infoFontBold.tres" type="DynamicFont" id=8]
+[ext_resource path="res://UI/fonts/infoFont.tres" type="DynamicFont" id=9]
+[ext_resource path="res://scenes/TitleScreen.cs" type="Script" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 0.2
+} ]
+
+[node name="Title Screen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground"]
+frames = SubResource( 1 )
+frame = 3
+centered = false
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 1145.0
+margin_bottom = 640.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu"]
+margin_right = 1025.0
+margin_bottom = 77.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "The Homecomer"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu"]
+margin_top = 81.0
+margin_right = 1025.0
+margin_bottom = 560.0
+size_flags_vertical = 3
+
+[node name="buttons" type="VBoxContainer" parent="Menu/HBoxContainer"]
+margin_right = 510.0
+margin_bottom = 479.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Refit Homeship" type="Button" parent="Menu/HBoxContainer/buttons"]
+margin_right = 510.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 7 )
+text = "Refit Homeship"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu/HBoxContainer"]
+margin_left = 514.0
+margin_right = 1025.0
+margin_bottom = 479.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = ExtResource( 8 )
+custom_fonts/normal_font = ExtResource( 9 )
+text = "Welcome to The Homecomer.
+
+This project is currently in pre-alpha prototype stage.
+It has been in this stage for months.
+
+I hope you enjoy the very limited features that have
+been added so far, as the core mechanics are continuesly
+worked on."
+[connection signal="pressed" from="Menu/HBoxContainer/buttons/Refit Homeship" to="." method="_on_Refit_Homeship_pressed"]

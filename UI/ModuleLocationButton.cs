@@ -7,19 +7,18 @@ public class ModuleLocationButton : Control
 
     private ShipModule module;
 
-    [Export(PropertyHint.Range, "0,4")]
-    public int sectionLocation;
-    [Export(PropertyHint.Range, "0,5")]
-    public int moduleLocation;
+    //[Export(PropertyHint.Range, "0,4")]
+    //public int sectionLocation;
+    //[Export(PropertyHint.Range, "0,5")]
+    //public int moduleLocation;
 
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
+    private ShipLocation location;
 
-    // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
+    public ShipLocation Location { get => location; set{ location = value; Refresh();}}
+
+    private void Refresh()
     {
-        module = Homecomer.getModule(sectionLocation, moduleLocation);
+        module = Homecomer.getModule(Location);
 
         string textureName  = "";
         switch(module.ModuleType){
@@ -67,8 +66,28 @@ public class ModuleLocationButton : Control
                 break;
         }
         Texture tex = GD.Load<Texture>("res://UI/module_types/" + textureName + ".png");
-        Sprite sprite = (Sprite)GetNode(new NodePath("Button/ModuleSprite"));
-        sprite.Texture = tex;
+        Button btn = (Button)GetNode(new NodePath("Button"));
+        btn.Icon = tex;
+        btn.HintTooltip = Location + " - " + module.ModuleType;
+    }
+
+    // Declare member variables here. Examples:
+    // private int a = 2;
+    // private string b = "text";
+
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
+    {
+
+    }
+
+    [Signal]
+    public delegate void ModuleSelected(int s, int m);//(ShipLocation location);
+
+    public void _on_Button_pressed()
+    {
+        //GD.Print("Hello button");
+        EmitSignal(nameof(ModuleSelected), Location.S, Location.M);
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.

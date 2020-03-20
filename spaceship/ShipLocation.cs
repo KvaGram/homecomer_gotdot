@@ -41,6 +41,10 @@ public struct ShipLocation
     {
         return m + s * Homecomer.MODULES_PER_SECTION;
     }
+    public static ShipLocation FromIndex(int index)
+    {
+        return new ShipLocation(index / Homecomer.MODULES_PER_SECTION, index % Homecomer.MODULES_PER_SECTION);
+    }
 
     public override string ToString()
     {

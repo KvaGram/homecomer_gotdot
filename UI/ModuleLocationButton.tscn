@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://UI/ModuleLocationButton.cs" type="Script" id=1]
-[ext_resource path="res://UI/module_types/Library.png" type="Texture" id=2]
+[ext_resource path="res://UI/module_types/Armoury.png" type="Texture" id=2]
 
 [node name="Module" type="Control"]
 anchor_right = 1.0
@@ -16,14 +16,13 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_right = 60.0
-margin_bottom = 40.0
+margin_right = 80.0
+margin_bottom = 50.0
+hint_tooltip = "(s 0, m 0) sample"
 mouse_default_cursor_shape = 2
+icon = ExtResource( 2 )
+expand_icon = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="ModuleSprite" type="Sprite" parent="Button"]
-z_index = 1
-texture = ExtResource( 2 )
-centered = false
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

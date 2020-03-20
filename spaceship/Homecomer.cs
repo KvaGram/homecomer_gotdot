@@ -93,7 +93,6 @@ public class Homecomer : Godot.Node
             GD.Print(f);
 
     }
-
     public void GotoScene(string path)
     {
         // This function will usually be called from a signal callback,
@@ -105,6 +104,7 @@ public class Homecomer : Godot.Node
         // The solution is to defer the load to a later time, when
         // we can be sure that no code from the current scene is running:
 
+        GD.Print("Loading.. ... ...");
         CallDeferred(nameof(DeferredGotoScene), path);
     }
 
@@ -124,13 +124,16 @@ public class Homecomer : Godot.Node
 
         // Optionally, to make it compatible with the SceneTree.change_scene() API.
         GetTree().CurrentScene = cScene;
+        GD.Print("Loaded!");
     }
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+  // Called every frame. 'delta' is the elapsed time since the previous frame.
+  public override void _Process(float delta)
+  {
+      if (Input.IsActionPressed("GotoTitle")) {
+          GotoScene("res://scenes/TitleScreen.tscn");
+      }
+  }
 
     public static Homecomer Instance { get => instance;}
     public static int GameMonth { get => Instance.gameMonth;}
@@ -161,9 +164,9 @@ public class Homecomer : Godot.Node
         foreach (ShipModule m in instance.shipModules)
             m.removeFromServices(crewID, type);
     }
-    internal static ShipModule getModule(int sectionLocation, int moduleLocation)
+    internal static ShipModule getModule(ShipLocation loc)
     {
-        int index = sectionLocation * MODULES_PER_SECTION + moduleLocation;
+        int index = loc.ToIndex();
         return instance.shipModules[index];
     }
 
